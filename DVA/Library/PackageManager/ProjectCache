@@ -5,6 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< Updated upstream
 <<<<<<< HEAD
       ticks: 638603267329147357
     m_Hash: 316925873
@@ -12,12 +13,17 @@ m_ProjectFiles:
       ticks: 638608555126646914
     m_Hash: 3681654876
 >>>>>>> main
+=======
+      ticks: 638608581067048310
+    m_Hash: 1051382176
+>>>>>>> Stashed changes
   m_LockFileStatus:
     m_FilePath: C:/Users/sagal/Documents/GitHub/hakoniwa_DVA/DVA/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< Updated upstream
 <<<<<<< HEAD
       ticks: 638603323614147084
     m_Hash: 2411676094
@@ -25,6 +31,10 @@ m_ProjectFiles:
       ticks: 638608555126744237
     m_Hash: 2239248943
 >>>>>>> main
+=======
+      ticks: 638608595054901349
+    m_Hash: 3941902412
+>>>>>>> Stashed changes
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
