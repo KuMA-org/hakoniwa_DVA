@@ -47,7 +47,7 @@ public class Score_cal : MonoBehaviour
     void OnCollisionEnter( Collision collision )
     {
         string yourTag  = collision.gameObject.tag;
-
+        Debug.Log("sawa!!");
         if( yourTag == "sphere" )
         {
             score += 1;
