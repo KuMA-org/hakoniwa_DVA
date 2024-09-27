@@ -10,7 +10,7 @@ public class ColorChange : MonoBehaviour
     void Start()
     {
         button = GameObject.FindGameObjectsWithTag("sphere");
-        number = Random.Range(0,3);
+        number = Random.Range(0,4);
         button[number].GetComponent<Renderer>().material.color = Color.red;
         Debug.Log(button[0]);
         Debug.Log(number);
