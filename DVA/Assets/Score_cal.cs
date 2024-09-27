@@ -12,9 +12,9 @@ public class Score_cal : MonoBehaviour
 
     Vector3 indexTipPos;
     Quaternion indexTipRotate;
-    public static bool flag_setscore;
+    public bool flag_setscore;
 
-    public int Score;
+    //public int Score;
     
     // public Text scoreText; //Text用変数
     //private int score = 0; //スコア計算用変数
@@ -23,18 +23,19 @@ public class Score_cal : MonoBehaviour
     void Start()
     {
         flag_setscore = false;
-        Score   = 0;
+        //Score   = 0;
        // SetScore();   //初期スコアを代入して表示
     }
 
     // Update is called once per frame
     void Update()
     {
-        indexTipPos = MYHandSkelton.Bones[(int)OVRSkeleton.BoneId.Hand_Middle1].Transform.position;
-        indexTipRotate = MYHandSkelton.Bones[(int)OVRSkeleton.BoneId.Hand_Middle1].Transform.rotation;
-        IndexSphere.transform.position = indexTipPos;
-        IndexSphere.transform.rotation = indexTipRotate;
-
+        if (MYHand.IsTracked){
+            indexTipPos = MYHandSkelton.Bones[(int)OVRSkeleton.BoneId.Hand_Middle1].Transform.position;
+            indexTipRotate = MYHandSkelton.Bones[(int)OVRSkeleton.BoneId.Hand_Middle1].Transform.rotation;
+            IndexSphere.transform.position = indexTipPos;
+            IndexSphere.transform.rotation = indexTipRotate;
+        }
         
     }
 
@@ -45,7 +46,7 @@ public class Score_cal : MonoBehaviour
 
         if (other.gameObject.tag=="sphere")
         {
-            Score += 1;
+            //Score += 1;
             other.gameObject.GetComponent<Renderer>().material.color = Color.white;
             
             flag_setscore = true;

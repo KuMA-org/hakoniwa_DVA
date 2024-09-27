@@ -5,14 +5,17 @@ using UnityEngine.UI;
 
 public class score : MonoBehaviour
 {
+    public int Score;
     public Text scoreText; //Text用変数
-    Score_cal Score;
-    Score_cal flag_setscore;
+    public Score_cal score_calRight;
+    public Score_cal score_calLeft;
+    //Score_cal Score;
+    //Score_cal flag_setscore;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Score = 0;
         SetScore();   //初期スコアを代入して表示
     }
 
@@ -20,10 +23,12 @@ public class score : MonoBehaviour
     void Update()
     {
         //Debug.Log(Score.score);
-        if(flag_setscore == true)
+        if(score_calRight.flag_setscore == true || score_calLeft.flag_setscore == true)
         {
+            Score += 1;
             SetScore();
-            flag_setscore = false;
+            score_calRight.flag_setscore = false;
+            score_calLeft.flag_setscore = false;
         }
 
     }
@@ -31,5 +36,6 @@ public class score : MonoBehaviour
     void SetScore()
     {
         scoreText.text = string.Format( "Score:{0}", Score );
+        //scoreText.text = string.Format( "Score:{0}", score_calLeft.Score );
     }
 }
