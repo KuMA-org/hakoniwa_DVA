@@ -47,7 +47,7 @@ public class Score_cal : MonoBehaviour
         if (other.gameObject.tag=="sphere")
         {
             //Score += 1;
-            other.gameObject.GetComponent<Renderer>().material.color = Color.white;
+            other.gameObject.GetComponent<Renderer>().material.color = Color.black;
             
             flag_setscore = true;
             //Debug.Log("sawatta!!");

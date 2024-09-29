@@ -9,6 +9,7 @@ public class score : MonoBehaviour
     public Text scoreText; //Text用変数
     public Score_cal score_calRight;
     public Score_cal score_calLeft;
+    public move_testhand score_testhand;
     //Score_cal Score;
     //Score_cal flag_setscore;
 
@@ -23,12 +24,13 @@ public class score : MonoBehaviour
     void Update()
     {
         //Debug.Log(Score.score);
-        if(score_calRight.flag_setscore == true || score_calLeft.flag_setscore == true)
+        if(score_calRight.flag_setscore == true || score_calLeft.flag_setscore == true || score_testhand.flag_setscore == true)
         {
-            Score += 1;
+            Score += 100;
             SetScore();
             score_calRight.flag_setscore = false;
             score_calLeft.flag_setscore = false;
+            score_testhand.flag_setscore = false;
         }
 
     }

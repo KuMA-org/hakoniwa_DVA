@@ -5,13 +5,12 @@ using UnityEngine.UI;
 
 public class timercount : MonoBehaviour
 {
-    public float timer = 90.0f; // 別のスクリプトで使う（予定）
+    public float timer = 60.0f; 
     public Text TimeCounter;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -22,7 +21,7 @@ public class timercount : MonoBehaviour
 
         if(timer <= 0.0f)
         {
-            TimeCounter.text = "残り時間 ： 0"; //0で止めてマイナスにいかないように
+            TimeCounter.text = "残り時間 ： 0.00"; //0で止めてマイナスにいかないように
         }
     }
 }
