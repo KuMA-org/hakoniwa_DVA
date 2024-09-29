@@ -301,12 +301,7 @@ QualitySettings:
     Nintendo 3DS: 5
     Nintendo Switch: 5
     PS4: 5
-<<<<<<< HEAD
-    PS5: 5
-    Server: 0
-=======
     PSP2: 2
->>>>>>> 566e32e8b4b6d41e764c7f61f5ad8e0381d002e3
     Stadia: 5
     Standalone: 5
     WebGL: 3
