@@ -43,35 +43,37 @@ public class ColorChange : MonoBehaviour
 
     IEnumerator ChangetheColor1 () //はじめの段階，1つボタンの色を変える
     {
-        while(number1 == beforenumber1)
+        //前光ったボタンとすでに光っているボタンは選ばない，ランダムで一つ選択
+        while(number1 == beforenumber1 || button[number1].GetComponent<Renderer>().material.color == Color.red) 
         {
-            number1 = Randomnumber(); //前光ったボタンと被らないよう，ランダムで一つ選択
+            number1 = Randomnumber(); 
         }
         beforenumber1 = number1;
         button[number1].GetComponent<Renderer>().material.color = Color.red; //赤に変更
         yield return new WaitForSeconds(1);
         // button[number1].GetComponent<Renderer>().material.color = Color.black; //
 
-        if(time >= 5.0f)
-        {
-            StartCoroutine("ChangetheColor2");
-            StopCoroutine("ChangetheColor1");
-        }else
-        {
-            StartCoroutine("ChangetheColor1");
-        }
-        // StartCoroutine("ChangetheColor1");
+        // if(time >= 5.0f)
+        // {
+        //     StartCoroutine("ChangetheColor2");
+        //     StopCoroutine("ChangetheColor1");
+        // }else
+        // {
+        //     StartCoroutine("ChangetheColor1");
+        // }
+        StartCoroutine("ChangetheColor1");
 
+        yield return new WaitForSeconds(0.5f);
     }
     IEnumerator ChangetheColor2 () //2つボタンの色を変える
     {
-        while(number1 == beforenumber1)
+        while(number1 == beforenumber1 || button[number1].GetComponent<Renderer>().material.color == Color.red)
         {
             number1 = Randomnumber(); 
         }
         beforenumber1 = number1;
         number2 = number1;
-        while(number1 == number2 || beforenumber2 == number2)
+        while(number1 == number2 || beforenumber2 == number2 || button[number2].GetComponent<Renderer>().material.color == Color.red)
         {
             number2 = Randomnumber(); 
         }
@@ -82,6 +84,8 @@ public class ColorChange : MonoBehaviour
         yield return new WaitForSeconds(1);
         // button[number1].GetComponent<Renderer>().material.color = Color.black; 
         // button[number2].GetComponent<Renderer>().material.color = Color.black; 
+
+        yield return new WaitForSeconds(0.5f);
 
         StartCoroutine("ChangetheColor2");
     }

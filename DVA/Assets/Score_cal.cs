@@ -44,7 +44,7 @@ public class Score_cal : MonoBehaviour
     {
             //Debug.Log("sawa!!");
 
-        if (other.gameObject.tag=="sphere")
+        if (other.gameObject.tag=="sphere" && other.gameObject.GetComponent<Renderer>().material.color == Color.red)
         {
             //Score += 1;
             other.gameObject.GetComponent<Renderer>().material.color = Color.black;

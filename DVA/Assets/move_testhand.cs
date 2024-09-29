@@ -17,26 +17,26 @@ public class move_testhand : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.LeftArrow))
         {
-            this.transform.Translate(-0.003f,0.0f,0.0f);
+            this.transform.Translate(-0.01f,0.0f,0.0f);
         }
         if(Input.GetKey(KeyCode.RightArrow))
         {
-            this.transform.Translate(0.003f,0.0f,0.0f);
+            this.transform.Translate(0.01f,0.0f,0.0f);
         }
         if(Input.GetKey(KeyCode.UpArrow))
         {
-            this.transform.Translate(0.0f,0.003f,0.0f);
+            this.transform.Translate(0.0f,0.01f,0.0f);
         }
         if(Input.GetKey(KeyCode.DownArrow))
         {
-            this.transform.Translate(0.0f,-0.003f,0.0f);
+            this.transform.Translate(0.0f,-0.01f,0.0f);
         }
     }
     void OnTriggerEnter(Collider other)
     {
             //Debug.Log("sawa!!");
 
-        if (other.gameObject.tag=="sphere")
+        if (other.gameObject.tag=="sphere" && other.gameObject.GetComponent<Renderer>().material.color == Color.red)
         {
             other.gameObject.GetComponent<Renderer>().material.color = Color.black;
 
