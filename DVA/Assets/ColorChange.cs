@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class ColorChange : MonoBehaviour
 {
     GameObject[] button;
@@ -35,14 +36,14 @@ public class ColorChange : MonoBehaviour
            
             number = Random.Range(0, button.Length);
             
-            Debug.Log("before_number" + before_number);
+           
             
             while (number == before_number)
             {
-                number = Random.Range(0, 4);
+                number = Random.Range(0, button.Length);
                 
             }
-            Debug.Log("number" + number);
+            
             Change();
             timer = 0;
         }
@@ -55,5 +56,6 @@ public class ColorChange : MonoBehaviour
     {
         
         button[number].GetComponent<Renderer>().material.color = Color.red;
+        
     }
 }
