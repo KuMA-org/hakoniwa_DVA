@@ -33,34 +33,36 @@ public class Score_cal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (MYHand.IsTracked)
-        {
+        if (MYHand.IsTracked){
             indexTipPos = MYHandSkelton.Bones[(int)OVRSkeleton.BoneId.Hand_Middle1].Transform.position;
             indexTipRotate = MYHandSkelton.Bones[(int)OVRSkeleton.BoneId.Hand_Middle1].Transform.rotation;
             IndexSphere.transform.position = indexTipPos;
             IndexSphere.transform.rotation = indexTipRotate;
         }
-
+        
     }
 
     //sphereとhandsphereの接触でポイント加算
     void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("sawa!!");
+            //Debug.Log("sawa!!");
 
-        if (other.gameObject.tag == "sphere")
+        if (other.gameObject.tag=="sphere" && other.gameObject.GetComponent<Renderer>().material.color == Color.red)
         {
-            //other.gameObject.GetComponent<Renderer>().material.color = Color.white;
-            //flag_setscore = true;
+            //Score += 1;
+            other.gameObject.GetComponent<Renderer>().material.color = Color.black;
+            
+            flag_setscore = true;
+
             //Debug.Log("sawatta!!");
-            if (other.gameObject.GetComponent<Renderer>().material.color == Color.red)
+            if(other.gameObject.GetComponent<Renderer>().material.color == Color.red)
             {
                 flag_setscore = true;
                 other.gameObject.GetComponent<Renderer>().material = _material;
                 audiosource1.PlayOneShot(se);
             }
         }
-        //SetScore();
+       //SetScore();
     }
 
     // void SetScore()
@@ -68,4 +70,3 @@ public class Score_cal : MonoBehaviour
     //     scoreText.text = string.Format( "Score:{0}", score );
     // }
 }
-
