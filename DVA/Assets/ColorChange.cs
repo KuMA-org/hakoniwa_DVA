@@ -39,7 +39,7 @@ public class ColorChange : MonoBehaviour
             StopCoroutine("ChangetheColor3");
             for(int i = 0; i < button.Length; i++)
             {
-                button[i].GetComponent<Renderer>().material.color = Color.black;
+                button[i].GetComponent<Renderer>().material = _material;
             }
         }
     }
@@ -54,7 +54,7 @@ public class ColorChange : MonoBehaviour
         beforenumber1 = number1;
         button[number1].GetComponent<Renderer>().material.color = Color.red; //赤に変更
         yield return new WaitForSeconds(2);
-        button[number1].GetComponent<Renderer>().material.color = Color.black; //
+        button[number1].GetComponent<Renderer>().material = _material; //
 
         if(time >= 5.0f)
         {
@@ -85,8 +85,8 @@ public class ColorChange : MonoBehaviour
         button[number1].GetComponent<Renderer>().material.color = Color.red; //赤に変更
         button[number2].GetComponent<Renderer>().material.color = Color.red; 
         yield return new WaitForSeconds(1.5f);
-        button[number1].GetComponent<Renderer>().material.color = Color.black; 
-        button[number2].GetComponent<Renderer>().material.color = Color.black; 
+        button[number1].GetComponent<Renderer>().material = _material; 
+        button[number2].GetComponent<Renderer>().material = _material; 
 
         yield return new WaitForSeconds(0.5f);
 
@@ -125,9 +125,9 @@ public class ColorChange : MonoBehaviour
         button[number2].GetComponent<Renderer>().material.color = Color.red; 
         button[number3].GetComponent<Renderer>().material.color = Color.red; 
         yield return new WaitForSeconds(1.5f);
-        button[number1].GetComponent<Renderer>().material.color = Color.black; 
-        button[number2].GetComponent<Renderer>().material.color = Color.black; 
-        button[number3].GetComponent<Renderer>().material.color = Color.black; 
+        button[number1].GetComponent<Renderer>().material = _material; 
+        button[number2].GetComponent<Renderer>().material = _material; 
+        button[number3].GetComponent<Renderer>().material = _material; 
 
         yield return new WaitForSeconds(0.5f);
 
