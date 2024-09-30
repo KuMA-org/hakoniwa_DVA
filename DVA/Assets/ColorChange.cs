@@ -7,21 +7,35 @@ using UnityEngine.UI;
 public class ColorChange : MonoBehaviour
 {
     GameObject[] button;
+
     public int number1;
     public int number2;
     public int number3;
-    private int number;
+    
     private float time;
     private int beforenumber1 = -1; //連続で同じボタンが光らないように
     private int beforenumber2 = -1;
     private int beforenumber3 = -1;
 
+
+    public int number;
+    int before_number;
+    [SerializeField] Material _material;
+
+    float timer;
+
     // Start is called before the first frame update
     void Start()
     {
         button = GameObject.FindGameObjectsWithTag("sphere");
+
         StartCoroutine("ChangetheColor1");
         // Debug.Log(button.Length);
+
+        timer = 0;
+        number = -1; // first time not change color
+        Debug.Log("lenght" + button.Length);
+
     }
 
     // Update is called once per frame
@@ -134,5 +148,11 @@ public class ColorChange : MonoBehaviour
     int Randomnumber()
     {
         return number = Random.Range(0,button.Length);
+    }
+
+    void Change()
+    {
+
+        button[number].GetComponent<Renderer>().material.color = Color.red;
     }
 }
