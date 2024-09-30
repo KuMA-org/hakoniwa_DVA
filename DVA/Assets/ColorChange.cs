@@ -7,34 +7,23 @@ using UnityEngine.UI;
 public class ColorChange : MonoBehaviour
 {
     GameObject[] button;
-
     public int number1;
     public int number2;
     public int number3;
-    
+    private int number;
     private float time;
     private int beforenumber1 = -1; //連続で同じボタンが光らないように
     private int beforenumber2 = -1;
     private int beforenumber3 = -1;
 
-
-    public int number;
-    int before_number;
     [SerializeField] Material _material;
-
-    float timer;
 
     // Start is called before the first frame update
     void Start()
     {
         button = GameObject.FindGameObjectsWithTag("sphere");
-
         StartCoroutine("ChangetheColor1");
         // Debug.Log(button.Length);
-
-        timer = 0;
-        number = -1; // first time not change color
-        Debug.Log("lenght" + button.Length);
 
     }
 
@@ -50,7 +39,7 @@ public class ColorChange : MonoBehaviour
             StopCoroutine("ChangetheColor3");
             for(int i = 0; i < button.Length; i++)
             {
-                button[i].GetComponent<Renderer>().material.color = Color.black;
+                button[i].GetComponent<Renderer>().material = _material;
             }
         }
     }
@@ -65,7 +54,7 @@ public class ColorChange : MonoBehaviour
         beforenumber1 = number1;
         button[number1].GetComponent<Renderer>().material.color = Color.red; //赤に変更
         yield return new WaitForSeconds(2);
-        button[number1].GetComponent<Renderer>().material.color = Color.black; //
+        button[number1].GetComponent<Renderer>().material = _material; //
 
         if(time >= 5.0f)
         {
@@ -96,8 +85,8 @@ public class ColorChange : MonoBehaviour
         button[number1].GetComponent<Renderer>().material.color = Color.red; //赤に変更
         button[number2].GetComponent<Renderer>().material.color = Color.red; 
         yield return new WaitForSeconds(1.5f);
-        button[number1].GetComponent<Renderer>().material.color = Color.black; 
-        button[number2].GetComponent<Renderer>().material.color = Color.black; 
+        button[number1].GetComponent<Renderer>().material = _material; 
+        button[number2].GetComponent<Renderer>().material = _material; 
 
         yield return new WaitForSeconds(0.5f);
 
@@ -136,9 +125,9 @@ public class ColorChange : MonoBehaviour
         button[number2].GetComponent<Renderer>().material.color = Color.red; 
         button[number3].GetComponent<Renderer>().material.color = Color.red; 
         yield return new WaitForSeconds(1.5f);
-        button[number1].GetComponent<Renderer>().material.color = Color.black; 
-        button[number2].GetComponent<Renderer>().material.color = Color.black; 
-        button[number3].GetComponent<Renderer>().material.color = Color.black; 
+        button[number1].GetComponent<Renderer>().material = _material; 
+        button[number2].GetComponent<Renderer>().material = _material; 
+        button[number3].GetComponent<Renderer>().material = _material; 
 
         yield return new WaitForSeconds(0.5f);
 
@@ -148,6 +137,32 @@ public class ColorChange : MonoBehaviour
     int Randomnumber()
     {
         return number = Random.Range(0,button.Length);
+
+
+        // timer += Time.deltaTime;
+
+        // if (timer > 1.0f)
+        // {
+        //     before_number = number;
+        //     if (before_number >= 0)
+        //     {
+        //         button[before_number].GetComponent<Renderer>().material = _material;
+        //     }
+
+        //     number = Random.Range(0, button.Length);
+
+        //     Debug.Log("before_number" + before_number);
+
+        //     while (number == before_number)
+        //     {
+        //         number = Random.Range(0, button.Length);
+
+        //     }
+        //     Debug.Log("number" + number);
+        //     Change();
+        //     timer = 0;
+        // }
+
     }
 
     void Change()

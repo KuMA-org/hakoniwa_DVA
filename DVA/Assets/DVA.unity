@@ -281,14 +281,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f90e4a58c563e34ea5dc20838dfe997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   number1: 0
   number2: 0
   number3: 0
-=======
   number: 0
   _material: {fileID: 2100000, guid: 06371ba6eb4a72d43b100c5986373b67, type: 2}
->>>>>>> origin/Yamaguchi
 --- !u!4 &48496725
 Transform:
   m_ObjectHideFlags: 0
@@ -1222,8 +1219,6 @@ Transform:
   m_Father: {fileID: 27838226}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &599259533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,7 +1485,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628912443}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> origin/Yamaguchi
 --- !u!1001 &661177490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2816,7 +2810,7 @@ Rigidbody:
     serializedVersion: 2
     m_Bits: 0
   m_ExcludeLayers:
-    serializedVersion: 2
+    serializedVersion: 2head
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
@@ -3135,8 +3129,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &1852100628
 GameObject:
   m_ObjectHideFlags: 0
@@ -3270,7 +3262,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852100628}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> origin/Yamaguchi
+
 --- !u!1 &1942011989
 GameObject:
   m_ObjectHideFlags: 0
