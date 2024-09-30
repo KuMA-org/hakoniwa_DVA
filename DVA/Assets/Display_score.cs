@@ -10,12 +10,14 @@ public class Display_score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        display_score.text = "Your Points ";
+        display_score.text = "Your Points: 0 ";
     }
 
     // Update is called once per frame
     void Update()
     {
+        //ScoreManagerからスコアを取得
+        display_score.text = "Your Points: " + score.Score.ToString();
         
     }
 }

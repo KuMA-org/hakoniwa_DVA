@@ -24,16 +24,19 @@ public class timeUP : MonoBehaviour
     {
         timer -= Time.deltaTime;
 
-        timerText.text = timer.ToString("f1") + "•b";
+        timerText.text = timer.ToString("f1") + "ï¿½b";
 
         if(timer <= 0)
         {
-            timerText.text = "ƒ^ƒCƒ€ƒAƒbƒv";
+            timerText.text = "ï¿½^ï¿½Cï¿½ï¿½ï¿½Aï¿½bï¿½v";
             flag_timeup = true;
             StartCoroutine("Finish");
 
         }
     }
+
+
+
     IEnumerator Finish()
     {
         yield return new WaitForSeconds(3);

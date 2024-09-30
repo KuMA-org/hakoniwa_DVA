@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class score : MonoBehaviour
 {
-    public int Score;
+    public static int Score;
     public Text scoreText; //Text用変数
     public Score_cal score_calRight;
     public Score_cal score_calLeft;
