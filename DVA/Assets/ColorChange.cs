@@ -16,12 +16,15 @@ public class ColorChange : MonoBehaviour
     private int beforenumber2 = -1;
     private int beforenumber3 = -1;
 
+    [SerializeField] Material _material;
+
     // Start is called before the first frame update
     void Start()
     {
         button = GameObject.FindGameObjectsWithTag("sphere");
         StartCoroutine("ChangetheColor1");
         // Debug.Log(button.Length);
+
     }
 
     // Update is called once per frame
@@ -134,5 +137,37 @@ public class ColorChange : MonoBehaviour
     int Randomnumber()
     {
         return number = Random.Range(0,button.Length);
+
+
+        // timer += Time.deltaTime;
+
+        // if (timer > 1.0f)
+        // {
+        //     before_number = number;
+        //     if (before_number >= 0)
+        //     {
+        //         button[before_number].GetComponent<Renderer>().material = _material;
+        //     }
+
+        //     number = Random.Range(0, button.Length);
+
+        //     Debug.Log("before_number" + before_number);
+
+        //     while (number == before_number)
+        //     {
+        //         number = Random.Range(0, button.Length);
+
+        //     }
+        //     Debug.Log("number" + number);
+        //     Change();
+        //     timer = 0;
+        // }
+
+    }
+
+    void Change()
+    {
+
+        button[number].GetComponent<Renderer>().material.color = Color.red;
     }
 }
