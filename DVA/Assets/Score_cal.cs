@@ -50,17 +50,18 @@ public class Score_cal : MonoBehaviour
         if (other.gameObject.tag=="sphere" && other.gameObject.GetComponent<Renderer>().material.color == Color.red)
         {
             //Score += 1;
-            other.gameObject.GetComponent<Renderer>().material.color = Color.black;
+            other.gameObject.GetComponent<Renderer>().material = _material;
             
             flag_setscore = true;
+            audiosource1.PlayOneShot(se);
 
             //Debug.Log("sawatta!!");
-            if(other.gameObject.GetComponent<Renderer>().material.color == Color.red)
-            {
-                flag_setscore = true;
-                other.gameObject.GetComponent<Renderer>().material = _material;
-                audiosource1.PlayOneShot(se);
-            }
+            //if (other.gameObject.GetComponent<Renderer>().material.color == Color.red)
+            //{
+            //    flag_setscore = true;
+            //    other.gameObject.GetComponent<Renderer>().material = _material;
+            //    audiosource1.PlayOneShot(se);
+            //}
         }
        //SetScore();
     }
