@@ -17,7 +17,7 @@ public class timercount : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-        TimeCounter.text = "残り時間 ： "+timer.ToString("n2"); //残り時間の表示
+        TimeCounter.text = "残り時間 ："+timer.ToString("n2"); //残り時間の表示
 
         if(timer <= 0.0f)
         {
