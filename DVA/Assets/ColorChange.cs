@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class ColorChange : MonoBehaviour
 {
+    [SerializeField] Material _material;
+
     GameObject[] button;
     public int number1;
     public int number2;
@@ -16,21 +19,45 @@ public class ColorChange : MonoBehaviour
     private int beforenumber2 = -1;
     private int beforenumber3 = -1;
 
-    [SerializeField] Material _material;
+    public TextMeshProUGUI CountText;
+    float countdown = 3f;
+    int count;
+    public bool StartCall;
 
     // Start is called before the first frame update
     void Start()
     {
         button = GameObject.FindGameObjectsWithTag("sphere");
-        StartCoroutine("ChangetheColor1");
         // Debug.Log(button.Length);
-
+        StartCall = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+        if(countdown >= 0)
+        {
+            countdown -= Time.deltaTime;
+            count = (int)countdown;
+            if(count == 0)
+            {
+                CountText.text = "Start!";
+            }
+            else
+            {
+                CountText.text = count.ToString();                
+            }
+        }
+        if(countdown <= 0)
+        {
+            CountText.text = "";
+            time += Time.deltaTime;
+            if(!StartCall)
+            {
+                StartCall = true;
+                StartCoroutine("ChangetheColor1");
+            }
+        }
 
         if(time >= 60.0f)
         {
@@ -41,6 +68,7 @@ public class ColorChange : MonoBehaviour
             {
                 button[i].GetComponent<Renderer>().material = _material;
             }
+            CountText.text = "Finish!";
         }
     }
 
@@ -137,8 +165,7 @@ public class ColorChange : MonoBehaviour
     int Randomnumber()
     {
         return number = Random.Range(0,button.Length);
-
-
+    }
         // timer += Time.deltaTime;
 
         // if (timer > 1.0f)
@@ -163,11 +190,13 @@ public class ColorChange : MonoBehaviour
         //     timer = 0;
         // }
 
-    }
+    // void Change()
+    // {
 
-    void Change()
+    //     button[number].GetComponent<Renderer>().material.color = Color.red;
+    // }
+    public bool Called
     {
-
-        button[number].GetComponent<Renderer>().material.color = Color.red;
+        get {return StartCall;}
     }
 }

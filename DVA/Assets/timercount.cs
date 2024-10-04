@@ -5,19 +5,29 @@ using UnityEngine.UI;
 
 public class timercount : MonoBehaviour
 {
-    public float timer = 60.0f; 
+    private float timer = 60.0f; 
     public Text TimeCounter;
+    public ColorChange StartCall;
+
+    // private ColorChange startcall;
+    bool startcall;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        // this.startcall = FindObjectOfType<ColorChange>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        TimeCounter.text = "残り時間 ："+timer.ToString("n2"); //残り時間の表示
+        startcall = StartCall.Called;
+        while(StartCall)
+        {
+            timer -= Time.deltaTime;
+        }
+        TimeCounter.text = "残り時間 : "+timer.ToString("n2");
 
         if(timer <= 0.0f)
         {
