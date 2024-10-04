@@ -18,6 +18,7 @@ public class Score_cal : MonoBehaviour
     public AudioClip se;
     AudioSource audiosource1;
     //public int Score;
+    public bool flag_reset;
 
     // public Text scoreText; //Text用変数
     //private int score = 0; //スコア計算用変数
@@ -26,6 +27,7 @@ public class Score_cal : MonoBehaviour
     void Start()
     {
         flag_setscore = false;
+        flag_reset = false;
         // AudioSourceコンポーネント取得
         audiosource1 = GetComponent<AudioSource>();
     }
@@ -47,7 +49,7 @@ public class Score_cal : MonoBehaviour
     {
             //Debug.Log("sawa!!");
 
-        if (other.gameObject.tag=="sphere" && other.gameObject.GetComponent<Renderer>().material.color == Color.red)
+        if (other.gameObject.tag=="sphere" && other.gameObject.GetComponent<Renderer>().material.color == Color.red && flag_reset == true)
         {
             //Score += 1;
             other.gameObject.GetComponent<Renderer>().material = _material;
