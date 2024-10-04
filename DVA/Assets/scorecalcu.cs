@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-
 
 public class score : MonoBehaviour
 {
     public int Score;
-    public TextMeshProUGUI scoreText; //Text用変数
+    public Text scoreText; //Text用変数
     public Score_cal score_calRight;
     public Score_cal score_calLeft;
     public move_testhand score_testhand;

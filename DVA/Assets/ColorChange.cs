@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-
 
 public class ColorChange : MonoBehaviour
 {
@@ -19,7 +17,8 @@ public class ColorChange : MonoBehaviour
     private int beforenumber2 = -1;
     private int beforenumber3 = -1;
 
-    public TextMeshProUGUI CountText;
+    public Text CountText;
+    public timercount TimerCount;
     float countdown = 3f;
     int count;
     public bool StartCall;
@@ -30,6 +29,7 @@ public class ColorChange : MonoBehaviour
         button = GameObject.FindGameObjectsWithTag("sphere");
         // Debug.Log(button.Length);
         StartCall = false;
+        time = TimerCount.timer;
     }
 
     // Update is called once per frame
@@ -51,7 +51,7 @@ public class ColorChange : MonoBehaviour
         if(countdown <= 0)
         {
             CountText.text = "";
-            time += Time.deltaTime;
+            time -= Time.deltaTime;
             if(!StartCall)
             {
                 StartCall = true;
@@ -59,7 +59,7 @@ public class ColorChange : MonoBehaviour
             }
         }
 
-        if(time >= 60.0f)
+        if(time <= 0.0f)
         {
             StopCoroutine("ChangetheColor1");
             StopCoroutine("ChangetheColor2");
@@ -84,7 +84,7 @@ public class ColorChange : MonoBehaviour
         yield return new WaitForSeconds(2);
         button[number1].GetComponent<Renderer>().material = _material; //
 
-        if(time >= 5.0f)
+        if(time <= 55.0f)
         {
             StartCoroutine("ChangetheColor2");
             StopCoroutine("ChangetheColor1");
@@ -118,7 +118,7 @@ public class ColorChange : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        if(time >= 30.0f)
+        if(time <= 30.0f)
         {
             StartCoroutine("ChangetheColor3");
             StopCoroutine("ChangetheColor2");
