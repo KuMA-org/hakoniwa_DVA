@@ -275,7 +275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 48496725}
-  - component: {fileID: 48496724}
+  - component: {fileID: 48496726}
   m_Layer: 0
   m_Name: changecolor
   m_TagString: Untagged
@@ -283,24 +283,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &48496724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 48496723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f90e4a58c563e34ea5dc20838dfe997, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _material: {fileID: 2100000, guid: 06371ba6eb4a72d43b100c5986373b67, type: 2}
-  number1: 0
-  number2: 0
-  number3: 0
-  CountText: {fileID: 1378282304}
-  StartCall: 0
 --- !u!4 &48496725
 Transform:
   m_ObjectHideFlags: 0
@@ -316,6 +298,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &48496726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48496723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0efde9f16cab734a9313fe4625fb372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _material: {fileID: 2100000, guid: 06371ba6eb4a72d43b100c5986373b67, type: 2}
+  number1: 0
+  number2: 0
+  number3: 0
+  CountText: {fileID: 1378282304}
+  StartCall: 0
 --- !u!1 &60037748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,13 +1717,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 675297278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82609f1d1df27cd42ba862da4421e2a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f2a5f9cf3e33bf4da53efa3d48f1f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Score: 0
   scoreText: {fileID: 1230986862}
-  score_calRight: {fileID: 1063764280}
-  score_calLeft: {fileID: 1942011995}
+  score_calRight: {fileID: 1063764282}
+  score_calLeft: {fileID: 1942011997}
   score_testhand: {fileID: 1063514989}
 --- !u!1 &708842706
 GameObject:
@@ -1888,7 +1888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeCounter: {fileID: 191765688}
-  colorchange: {fileID: 48496724}
+  colorchange: {fileID: 48496726}
   white: {fileID: 2100000, guid: de0523ff908b24a40878214b7e5d5c98, type: 2}
   hide: {fileID: 2100000, guid: f113f72b5fa0725438138ca54212dc9a, type: 2}
   Plane: {fileID: 582600006}
@@ -2763,7 +2763,7 @@ GameObject:
   - component: {fileID: 1063764276}
   - component: {fileID: 1063764275}
   - component: {fileID: 1063764279}
-  - component: {fileID: 1063764280}
+  - component: {fileID: 1063764282}
   - component: {fileID: 1063764281}
   m_Layer: 0
   m_Name: Index_SphereRight
@@ -2885,24 +2885,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1063764280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1063764274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 206bfc66d109a5240819f500414d7bb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MYHand: {fileID: 1097631128}
-  MYHandSkelton: {fileID: 1097631123}
-  IndexSphere: {fileID: 1063764274}
-  _material: {fileID: 2100000, guid: 06371ba6eb4a72d43b100c5986373b67, type: 2}
-  flag_setscore: 0
-  se: {fileID: 8300000, guid: ec949be3070765a4fbd4d583899072ff, type: 3}
 --- !u!82 &1063764281
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2999,6 +2981,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1063764282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063764274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42a7b60cbcd31f54b81a8fa75f3b3dd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MYHand: {fileID: 1097631128}
+  MYHandSkelton: {fileID: 1097631123}
+  IndexSphere: {fileID: 420688916}
+  _material: {fileID: 2100000, guid: 06371ba6eb4a72d43b100c5986373b67, type: 2}
+  flag_setscore: 0
+  se: {fileID: 8300000, guid: ea0341dba540f3c4d8abef7b8c9d406b, type: 3}
 --- !u!114 &1097631123 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114567484643301796, guid: 835e735ca71bf78459fb2cababd74112, type: 3}
@@ -4949,7 +4949,7 @@ GameObject:
   - component: {fileID: 1942011992}
   - component: {fileID: 1942011991}
   - component: {fileID: 1942011994}
-  - component: {fileID: 1942011995}
+  - component: {fileID: 1942011997}
   - component: {fileID: 1942011996}
   m_Layer: 0
   m_Name: Index_SphereLeft
@@ -5071,24 +5071,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1942011995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1942011989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 206bfc66d109a5240819f500414d7bb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MYHand: {fileID: 1491594345}
-  MYHandSkelton: {fileID: 1491594344}
-  IndexSphere: {fileID: 1942011989}
-  _material: {fileID: 2100000, guid: 06371ba6eb4a72d43b100c5986373b67, type: 2}
-  flag_setscore: 0
-  se: {fileID: 8300000, guid: ec949be3070765a4fbd4d583899072ff, type: 3}
 --- !u!82 &1942011996
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5185,6 +5167,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1942011997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942011989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42a7b60cbcd31f54b81a8fa75f3b3dd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MYHand: {fileID: 1491594345}
+  MYHandSkelton: {fileID: 1491594344}
+  IndexSphere: {fileID: 420688916}
+  _material: {fileID: 2100000, guid: 06371ba6eb4a72d43b100c5986373b67, type: 2}
+  flag_setscore: 0
+  se: {fileID: 8300000, guid: ea0341dba540f3c4d8abef7b8c9d406b, type: 3}
 --- !u!1 &2074363483
 GameObject:
   m_ObjectHideFlags: 0
