@@ -26,7 +26,14 @@ public class score : MonoBehaviour
         //Debug.Log(Score.score);
         if(score_calRight.flag_setscore == true || score_calLeft.flag_setscore == true || score_testhand.flag_setscore == true)
         {
-            Score += 100;
+            if(score_testhand.colorcheck == 1)
+            {
+                Score += 100;
+            }
+            if(score_testhand.colorcheck == 2)
+            {
+                Score += 50;
+            }
             SetScore();
             score_calRight.flag_setscore = false;
             score_calLeft.flag_setscore = false;

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class timercount : MonoBehaviour
 {
-    public float timer = 60.0f; //制限時間
+    public float timer; //制限時間
     public Text TimeCounter;
     public ColorChange colorchange;
 
@@ -14,7 +14,6 @@ public class timercount : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // this.startcall = FindObjectOfType<ColorChange>();
     }
 
     // Update is called once per frame

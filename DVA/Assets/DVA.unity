@@ -2723,6 +2723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flag_setscore: 0
+  colorcheck: 0
 --- !u!1 &1063764274
 GameObject:
   m_ObjectHideFlags: 0
