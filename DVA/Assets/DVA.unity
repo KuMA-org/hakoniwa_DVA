@@ -295,6 +295,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f90e4a58c563e34ea5dc20838dfe997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _material: {fileID: 2100000, guid: 06371ba6eb4a72d43b100c5986373b67, type: 2}
+  number1: 0
+  number2: 0
+  number3: 0
+  CountText: {fileID: 1378282304}
+  StartCall: 0
 --- !u!4 &48496725
 Transform:
   m_ObjectHideFlags: 0
@@ -1512,7 +1518,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &582600007
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1714,6 +1720,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82609f1d1df27cd42ba862da4421e2a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Score: 0
+  scoreText: {fileID: 1230986862}
+  score_calRight: {fileID: 1063764280}
+  score_calLeft: {fileID: 1942011995}
+  score_testhand: {fileID: 1063514989}
 --- !u!1 &708842706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1876,8 +1887,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf94b095b2b00741a59f37d946df4d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 5
   TimeCounter: {fileID: 191765688}
+  colorchange: {fileID: 48496724}
+  white: {fileID: 2100000, guid: de0523ff908b24a40878214b7e5d5c98, type: 2}
+  hide: {fileID: 2100000, guid: f113f72b5fa0725438138ca54212dc9a, type: 2}
+  Plane: {fileID: 582600006}
 --- !u!4 &788729201
 Transform:
   m_ObjectHideFlags: 0
@@ -2883,6 +2897,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206bfc66d109a5240819f500414d7bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MYHand: {fileID: 1097631128}
+  MYHandSkelton: {fileID: 1097631123}
+  IndexSphere: {fileID: 1063764274}
+  _material: {fileID: 2100000, guid: 06371ba6eb4a72d43b100c5986373b67, type: 2}
+  flag_setscore: 0
+  se: {fileID: 8300000, guid: ec949be3070765a4fbd4d583899072ff, type: 3}
 --- !u!82 &1063764281
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2979,6 +2999,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1097631123 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114567484643301796, guid: 835e735ca71bf78459fb2cababd74112, type: 3}
+  m_PrefabInstance: {fileID: 342660641}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2609c54f376cffc4da1ab9401cc1a36f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1097631128 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114428879332287356, guid: 835e735ca71bf78459fb2cababd74112, type: 3}
+  m_PrefabInstance: {fileID: 342660641}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7623a8f0b49cf4dbaa40aea4d4be64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1163941837
 GameObject:
   m_ObjectHideFlags: 0
@@ -3917,6 +3959,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447467143}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1491594344 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114567484643301796, guid: 835e735ca71bf78459fb2cababd74112, type: 3}
+  m_PrefabInstance: {fileID: 661177490}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2609c54f376cffc4da1ab9401cc1a36f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1491594345 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114428879332287356, guid: 835e735ca71bf78459fb2cababd74112, type: 3}
+  m_PrefabInstance: {fileID: 661177490}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7623a8f0b49cf4dbaa40aea4d4be64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1500054423
 GameObject:
   m_ObjectHideFlags: 0
@@ -5019,6 +5083,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206bfc66d109a5240819f500414d7bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MYHand: {fileID: 1491594345}
+  MYHandSkelton: {fileID: 1491594344}
+  IndexSphere: {fileID: 1942011989}
+  _material: {fileID: 2100000, guid: 06371ba6eb4a72d43b100c5986373b67, type: 2}
+  flag_setscore: 0
+  se: {fileID: 8300000, guid: ec949be3070765a4fbd4d583899072ff, type: 3}
 --- !u!82 &1942011996
 AudioSource:
   m_ObjectHideFlags: 0
