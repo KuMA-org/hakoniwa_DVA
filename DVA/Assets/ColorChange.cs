@@ -19,7 +19,7 @@ public class ColorChange : MonoBehaviour
     private int beforenumber2 = -1;
     private int beforenumber3 = -1;
 
-    public TextMeshProUGUI CountText;
+    public Text CountText;
     float countdown = 3f;
     int count;
     public bool StartCall;
