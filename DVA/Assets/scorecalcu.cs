@@ -12,6 +12,9 @@ public class score : MonoBehaviour
     public Score_cal score_calRight;
     public Score_cal score_calLeft;
     public move_testhand score_testhand;
+    public Score_cal resetR;
+    public Score_cal resetL;
+
     //Score_cal Score;
     //Score_cal flag_setscore;
 
@@ -30,9 +33,18 @@ public class score : MonoBehaviour
         {
             Score += 100;
             SetScore();
+            if (score_calLeft.flag_setscore == true)
+            {
+                resetL.flag_reset = false;
+            }
+            if (score_calRight.flag_setscore == true)
+            {
+                resetR.flag_reset = false;
+            }
             score_calRight.flag_setscore = false;
             score_calLeft.flag_setscore = false;
             score_testhand.flag_setscore = false;
+
         }
 
     }
