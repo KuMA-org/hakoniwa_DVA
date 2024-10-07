@@ -52,7 +52,7 @@ public class Score_cal : MonoBehaviour
         if (other.gameObject.tag=="sphere" && (other.gameObject.GetComponent<Renderer>().material.color == Color.red || other.gameObject.GetComponent<Renderer>().material.color == Color.blue) && flag_reset == true)
         {
             //Score += 1;
-            other.gameObject.GetComponent<Renderer>().material = _material;
+            other.gameObject.GetComponent<Renderer>().material.color = Color.black;
             
             flag_setscore = true;
             audiosource1.PlayOneShot(se);

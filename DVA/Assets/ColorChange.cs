@@ -87,7 +87,7 @@ public class ColorChange : MonoBehaviour
             button[number1].GetComponent<Renderer>().material.color = Color.blue;
         }
         yield return new WaitForSeconds(1);
-        button[number1].GetComponent<Renderer>().material = _material; //
+        button[number1].GetComponent<Renderer>().material.color = Color.black; //
 
         if(time <= 55.0f)
         {
@@ -129,8 +129,8 @@ public class ColorChange : MonoBehaviour
         }
         yield return new WaitForSeconds(0.75f);
 
-        button[number1].GetComponent<Renderer>().material = _material; 
-        button[number2].GetComponent<Renderer>().material = _material; 
+        button[number1].GetComponent<Renderer>().material.color = Color.black; 
+        button[number2].GetComponent<Renderer>().material.color = Color.black; 
 
         yield return new WaitForSeconds(0.5f);
 
@@ -184,9 +184,9 @@ public class ColorChange : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.75f);
-        button[number1].GetComponent<Renderer>().material = _material; 
-        button[number2].GetComponent<Renderer>().material = _material; 
-        button[number3].GetComponent<Renderer>().material = _material; 
+        button[number1].GetComponent<Renderer>().material.color = Color.black; 
+        button[number2].GetComponent<Renderer>().material.color = Color.black; 
+        button[number3].GetComponent<Renderer>().material.color = Color.black; 
 
         yield return new WaitForSeconds(0.5f);
 
