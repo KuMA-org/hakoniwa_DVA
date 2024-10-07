@@ -9,6 +9,9 @@ public class Score_cal : MonoBehaviour
     [SerializeField] OVRSkeleton MYHandSkelton;
     [SerializeField] GameObject IndexSphere;
     [SerializeField] Material _material;
+    
+    
+    public int colorcheck = 0; // sphere's color  1 = red, 2 = blue
 
 
     Vector3 indexTipPos;
@@ -47,25 +50,29 @@ public class Score_cal : MonoBehaviour
     //sphereとhandsphereの接触でポイント加算
     void OnTriggerEnter(Collider other)
     {
-            //Debug.Log("sawa!!");
-
-        if (other.gameObject.tag=="sphere" && (other.gameObject.GetComponent<Renderer>().material.color == Color.red || other.gameObject.GetComponent<Renderer>().material.color == Color.blue) && flag_reset == true)
+        // Hit judgement with Spheres
+        // if sphere color is red
+        if (other.gameObject.tag=="sphere" && other.gameObject.GetComponent<Renderer>().material.color == Color.red  && flag_reset == true)
         {
             //Score += 1;
             other.gameObject.GetComponent<Renderer>().material = _material;
             
             flag_setscore = true;
+            colorcheck = 1;
             audiosource1.PlayOneShot(se);
-
-            //Debug.Log("sawatta!!");
-            //if (other.gameObject.GetComponent<Renderer>().material.color == Color.red)
-            //{
-            //    flag_setscore = true;
-            //    other.gameObject.GetComponent<Renderer>().material = _material;
-            //    audiosource1.PlayOneShot(se);
-            //}
         }
-       //SetScore();
+
+        // if sphere color is blue
+        if (other.gameObject.tag == "sphere" && other.gameObject.GetComponent<Renderer>().material.color == Color.blue && flag_reset == true)
+        {
+            other.gameObject.GetComponent<Renderer>().material = _material;
+
+            flag_setscore = true;
+            colorcheck = 2;
+            audiosource1.PlayOneShot(se);
+           
+        }
+        //SetScore();
     }
 
     // void SetScore()

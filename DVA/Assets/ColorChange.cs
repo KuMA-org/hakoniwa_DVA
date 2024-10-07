@@ -82,10 +82,12 @@ public class ColorChange : MonoBehaviour
         beforenumber1 = number1;
         button[number1].GetComponent<Renderer>().material.color = Color.red; //赤に変更
         yield return new WaitForSeconds(1);
-        if(button[number1].GetComponent<Renderer>().material.color != Color.black)
+        if(button[number1].GetComponent<Renderer>().material.color == Color.red)
         {
             button[number1].GetComponent<Renderer>().material.color = Color.blue;
+            
         }
+       
         yield return new WaitForSeconds(1);
         button[number1].GetComponent<Renderer>().material = _material; //
 
@@ -119,14 +121,17 @@ public class ColorChange : MonoBehaviour
         button[number2].GetComponent<Renderer>().material.color = Color.red; 
         yield return new WaitForSeconds(0.75f);
 
-        if(button[number1].GetComponent<Renderer>().material.color != Color.black)
+        if(button[number1].GetComponent<Renderer>().material.color == Color.red)
         {
             button[number1].GetComponent<Renderer>().material.color = Color.blue; 
         }
-        if(button[number2].GetComponent<Renderer>().material.color != Color.black)
+        
+        if(button[number2].GetComponent<Renderer>().material.color == Color.red)
         {
             button[number2].GetComponent<Renderer>().material.color = Color.blue; 
         }
+       
+        
         yield return new WaitForSeconds(0.75f);
 
         button[number1].GetComponent<Renderer>().material = _material; 
@@ -170,18 +175,23 @@ public class ColorChange : MonoBehaviour
         button[number3].GetComponent<Renderer>().material.color = Color.red; 
         yield return new WaitForSeconds(0.75f);
 
-        if(button[number1].GetComponent<Renderer>().material.color != Color.black)
+        if(button[number1].GetComponent<Renderer>().material.color == Color.red)
         {
             button[number1].GetComponent<Renderer>().material.color = Color.blue; 
         }
-        if(button[number2].GetComponent<Renderer>().material.color != Color.black)
+       
+
+        if (button[number2].GetComponent<Renderer>().material.color == Color.red)
         {
             button[number2].GetComponent<Renderer>().material.color = Color.blue; 
         }
-        if(button[number3].GetComponent<Renderer>().material.color != Color.black)
+        
+
+        if (button[number3].GetComponent<Renderer>().material.color == Color.red)
         {
             button[number3].GetComponent<Renderer>().material.color = Color.blue; 
         }
+        
 
         yield return new WaitForSeconds(0.75f);
         button[number1].GetComponent<Renderer>().material = _material; 

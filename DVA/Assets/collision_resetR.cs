@@ -7,6 +7,7 @@ public class collision_resetR : MonoBehaviour
     public Score_cal reset;
     public AudioClip se_resetR;
     AudioSource audiosourceR;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,8 @@ public class collision_resetR : MonoBehaviour
             reset.flag_reset = true;
             audiosourceR.PlayOneShot(se_resetR);
         }
-        
+
+       
+
     }
 }
