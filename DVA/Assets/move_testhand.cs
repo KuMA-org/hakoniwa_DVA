@@ -5,6 +5,7 @@ using UnityEngine;
 public class move_testhand : MonoBehaviour
 {
     public bool flag_setscore;
+    public int colorcheck = 0; // 1 = red, 2 = blue
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,16 @@ public class move_testhand : MonoBehaviour
             other.gameObject.GetComponent<Renderer>().material.color = Color.black;
 
             flag_setscore = true;
+            colorcheck = 1;
+            //Debug.Log("sawatta!!");
+        }
+
+        if (other.gameObject.tag=="sphere" && other.gameObject.GetComponent<Renderer>().material.color == Color.blue)
+        {
+            other.gameObject.GetComponent<Renderer>().material.color = Color.black;
+
+            flag_setscore = true;
+            colorcheck = 2;
             //Debug.Log("sawatta!!");
         }
     }
