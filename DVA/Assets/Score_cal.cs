@@ -5,12 +5,15 @@ using UnityEngine.UI;
 
 public class Score_cal : MonoBehaviour
 {
+    [SerializeField] GameObject Hand;
     [SerializeField] OVRHand MYHand;
     [SerializeField] OVRSkeleton MYHandSkelton;
     [SerializeField] GameObject IndexSphere;
     [SerializeField] Material _material;
-    
-    
+    [SerializeField] Material hand_material_ture;
+    [SerializeField] Material hand_material_false;
+
+
     public int colorcheck = 0; // sphere's color  1 = red, 2 = blue
 
 
@@ -30,7 +33,7 @@ public class Score_cal : MonoBehaviour
     void Start()
     {
         flag_setscore = false;
-        flag_reset = false;
+        flag_reset = true;
         // AudioSourceコンポーネント取得
         audiosource1 = GetComponent<AudioSource>();
     }
@@ -43,6 +46,14 @@ public class Score_cal : MonoBehaviour
             indexTipRotate = MYHandSkelton.Bones[(int)OVRSkeleton.BoneId.Hand_Middle1].Transform.rotation;
             IndexSphere.transform.position = indexTipPos;
             IndexSphere.transform.rotation = indexTipRotate;
+        }
+        if(flag_reset == true)
+        {
+            Hand.GetComponent<Renderer>().material = hand_material_ture;
+        }
+        else
+        {
+            Hand.GetComponent<Renderer>().material = hand_material_false;
         }
         
     }
